@@ -4,20 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MOoD (More Oother Day)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Panic+Stricken&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'Panic Stricken';
+      src: url('/Users/zezitocigano/Library/Fonts/PanicStricken.ttf') format('truetype'); /* Substitua 'path-to-your-fonts' pelo caminho correto */
+      font-weight: normal;
+      font-style: normal;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      background-image: url('/Users/zezitocigano/Desktop/DesenvolvimentoJogos/Room9/TexturaRoom9.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
+
     header {
       background-color: #720303;
       color: #fff;
-      padding: 10px 20px;
+      padding: 20px 10px;
       text-align: center;
     }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+
+    .logo img {
+      max-width: 160px; /* Define o tamanho máximo da imagem */
+      width: auto;
+      height: auto;
+    }
+
     nav {
-      position: relative; /* Inicialmente relativo para se ajustar dinamicamente */
+      position: relative;
       top: 0;
       width: 100%;
       background-color: #f2f2f2;
@@ -26,12 +55,14 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       display: flex;
       justify-content: center;
-      transition: top 0.3s ease; /* Transição suave para mudanças de posição */
+      transition: top 0.3s ease;
     }
+
     nav.fixed {
-      position: fixed; /* Fixa o menu no topo */
+      position: fixed;
       top: 0;
     }
+
     nav a {
       text-decoration: none;
       color: #333;
@@ -39,18 +70,25 @@
       margin: 0 5px;
       border-radius: 5px;
     }
+
     .container {
       max-width: 800px;
-      margin: 20px auto; /* Espaçamento do topo para o conteúdo */
-      padding: 0 20px;
+      margin: 40px auto; /* Aumenta o espaço superior e inferior */
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+
     .video-container {
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
       max-width: 100%;
+      margin-bottom: 20px; /* Espaço extra entre seções de vídeo */
     }
+
     .video-container iframe {
       position: absolute;
       top: 0;
@@ -58,18 +96,38 @@
       width: 100%;
       height: 100%;
     }
+
+    h1 {
+      font-family: 'Panic Stricken', sans-serif;
+      font-size: 3em;
+      text-align: center;
+      color: #fff;
+      margin-top: 0; /* Remove a margem superior padrão */
+    }
+
+    h2 {
+      font-size: 1.5em;
+      margin: 10px 0; /* Adiciona margem superior e inferior para os títulos das seções */
+    }
+
+    p {
+      margin-bottom: 50px; /* Adiciona margem inferior para os parágrafos */
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>MOoD (More Oother Day)</h1>
+  <div class="logo">
+    <img src="/Users/zezitocigano/Desktop/MOoD@300x.png" alt="Imagem do Header">
+  </div>
+  <h4>More Oother Day</h4>
 </header>
 
 <nav>
-  <a href="#historia">História</a>
-  <a href="#video">Trailer</a>
-  <a href="#jogo">Jogar Agora</a>
+  <a href="#historia"><b>História</b></a>
+  <a href="#video"><b>Trailer</b></a>
+  <a href="#jogo"><b>Jogar Agora</b></a>
 </nav>
 
 <div class="container">
@@ -87,11 +145,12 @@
     <h2>Trailer</h2>
     <div class="video-container">
       <!-- Substitua a URL abaixo pela URL do seu vídeo no YouTube ou Vimeo -->
-      <iframe width="560" height="315" source src="caminho/do/seu-video.mp4" type="video/mp4"> frameborder="0" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="caminho/do/seu-video.mp4" type="video/mp4" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
 
   <section id="jogo">
+    <br>
     <h2>Jogar Agora</h2>
     
     <div class="video-container">
@@ -114,5 +173,6 @@
     }
   });
 </script>
+
 </body>
 </html>
