@@ -6,7 +6,6 @@
   <title>MOoD (More Oother Day)</title>
 
   <style>
-
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -15,6 +14,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      scroll-behavior: smooth; /* Adiciona rolagem suave */
     }
 
     header {
@@ -65,11 +65,20 @@
       border-radius: 5px;
     }
 
+    nav a.active {
+      background-color: #720303;
+      color: white;
+    }
+
     .container {
-      max-width: 800px;
-      margin: 40px auto; /* Aumenta o espaço superior e inferior */
-      padding: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+
+    section {
+      padding: 50px 50px;
       background-color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 40px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
@@ -91,6 +100,26 @@
       height: 100%;
     }
 
+    .download-button {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0; /* Espaço superior e inferior ao redor do botão */
+    }
+
+    .download-button a {
+      background-color: #720303; /* Cor de fundo do botão */
+      color: #fff;
+      padding: 15px 30px; /* Tamanho do botão */
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .download-button a:hover {
+      background-color: #5a0101; /* Cor de fundo ao passar o mouse */
+    }
+
     h1 {
       font-family: 'Panic Stricken', sans-serif;
       font-size: 3em;
@@ -105,7 +134,48 @@
     }
 
     p {
-      margin-bottom: 50px; /* Adiciona margem inferior para os parágrafos */
+      margin-bottom: 20px; /* Adiciona margem inferior para os parágrafos */
+    }
+
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px; /* Espaçamento entre membros da equipe */
+    }
+
+    .team-member {
+      text-align: center;
+      margin: 0 40px;
+    }
+
+    .team-member img {
+      width: 200px; /* Ajuste o tamanho conforme necessário */
+      height: 200px; /* Ajuste o tamanho conforme necessário */
+      border-radius: 50%; /* Torna a imagem circular */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra às imagens */
+    }
+
+    .team-member p {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .top-members {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px; /* Reduzi a margem inferior */
+    }
+
+    .bottom-members {
+      display: flex;
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      .top-members {
+        flex-wrap: wrap;
+      }
     }
   </style>
 </head>
@@ -113,7 +183,7 @@
 
 <header>
   <div class="logo">
-    <img src="MOoD@300x.png " alt="Imagem do Header">
+    <img src="MOoD@300x.png" alt="Imagem do Header">
   </div>
   <h4>More Oother Day</h4>
 </header>
@@ -122,21 +192,29 @@
   <a href="#historia"><b>História</b></a>
   <a href="#video"><b>Trailer</b></a>
   <a href="#jogo"><b>Jogar Agora</b></a>
+  <a href="#equipa"><b>Equipa</b></a> <!-- Novo link de navegação -->
 </nav>
 
 <div class="container">
-
   <section id="historia">
     <h2>História do Jogo</h2>
-    <p>Um estudante universitário enfrenta diversos problemas psicológicos como depressão e esquizofrenia, perdido numa batalha solitária contra os monstros que assombram a sua mente. Para controlar esses problemas, ele procura um refúgio na medicação, mas quando esta deixa de funcionar ele vê-se preso numa confusão de alucinações.<br>
+    <p>Um estudante universitário enfrenta diversos problemas psicológicos como depressão e esquizofrenia, perdido numa batalha solitária contra os monstros que assombram a sua mente. Para controlar esses problemas, ele procura um refúgio na medicação, mas quando esta deixa de funcionar ele vê-se preso numa confusão de alucinações.</p>
+    <p>Criaturas sinistras como monstros e demónios começam a aparecer no seu caminho, transformando a sua realidade num novo mundo, onde ele se vê sozinho a ter de combater essas criaturas para sobreviver.</p>
+    <p>Cada tentativa revela mais sobre os conflitos mentais do protagonista, onde ele se vê obrigado a confrontar as suas próprias fraquezas, encontrando uma maneira de as superar, enquanto luta para sobreviver.</p>
+    
+    <p>O objetivo do jogo passa por avançar por diversos conjuntos de salas, onde os monstros presentes em cada sala se diferenciam em poderes, quantidade e estrutura de ambiente, a depender do quanto o jogador avançou na atual run. Para avançar ao longo de cada sala é necessário derrotar todos os monstros presentes, sendo que a sala final se diferencia pelo monstro presente, neste caso o boss - o inimigo mais forte e chefe do andar. Para ser possível avançar para o nível seguinte é necessário derrotar o chefe final de cada sala.</p>
 
-    <br>Criaturas sinistras como monstros e demónios começam a aparecer no seu caminho, transformando a sua realidade num novo mundo, onde ele se vê sozinho a ter de combater essas criaturas para sobreviver.</br>
-        
-    <br>Cada tentativa revela mais sobre os conflitos mentais do protagonista, onde ele se vê obrigado a confrontar as suas próprias fraquezas, encontrando uma maneira de as superar, enquanto luta para sobreviver. </p>
+    <p>Ao longo do jogo o jogador pode colecionar diversos itens que influenciam a vida do mesmo, bem como a agilidade e poder. Estes itens também estão disponíveis para compra na loja do jogo, sendo eles:</p>
+    <p>- A Orbe de Regeneração, que restaura uma quantidade significativa de vida do jogador.</p>
+    <p>- O Amuleto de Força e o Escudo de Proteção, que conferem ao jogador mais poder de ataque, causando dano maior no inimigo.</p>
+    <p>- O Relâmpago, que confere mais velocidade de movimento do jogador.</p>
+
+    <p>De forma a derrotar os inimigos presentes no jogo, o jogador tem à sua disposição dois tipos diferentes de armas:</p>
+    <p>- A espada, que permite que o jogador ataque de uma distância curta.</p>
+    <p>- A varinha mágica, que permite que o jogador ataque de uma distância longa, lançando as mesmas.</p>
   </section>
 
   <section id="video">
-    <h2>Trailer</h2>
     <div class="video-container">
       <!-- Substitua a URL abaixo pela URL do seu vídeo no YouTube ou Vimeo -->
       <iframe width="560" height="315" src="VídeoFinal.mp4" type="video/mp4" frameborder="0" allowfullscreen></iframe>
@@ -144,18 +222,79 @@
   </section>
 
   <section id="jogo">
-    <br>
-    <h2>Jogar Agora</h2>
-    
     <div class="video-container">
       <!-- Substitua a URL abaixo pela URL do seu jogo jogável em WebGL -->
       <iframe src="https://url-do-seu-jogo-em-webgl" width="800" height="600" frameborder="0"></iframe>
     </div>
+    <div class="download-button">
+      <a href="URL-DO-SEU-ARQUIVO-EXECUTAVEL" download>Descarregar Agora</a>
+    </div>
   </section>
 
+  <section id="equipa">
+    <div class="team-container">
+      <div class="top-members">
+        <div class="team-member">
+          <img src="Alex.png" alt="Membro 1">
+          <p>Alexandre Cardoso</p>
+        </div>
+        <div class="team-member">
+          <img src="Daniela.png" alt="Membro 2">
+          <p>Daniela Fonseca</p>
+        </div>
+        <div class="team-member">
+          <img src="Jose.png" alt="Membro 3">
+          <p>José Pinto</p>
+        </div>
+      </div>
+      <div class="bottom-members">
+        <div class="team-member">
+          <img src="Thiago.png" alt="Membro 4">
+          <p>Thiago Chicó</p>
+        </div>
+        <div class="team-member">
+          <img src="Margarida.png" alt="Membro 5">
+          <p>Margarida Santos</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 
 <script>
+  // Adiciona a classe 'active' ao link de navegação correspondente à seção visível
+  const navLinks = document.querySelectorAll('nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+
+    document.querySelectorAll('section').forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').includes(current)) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Adiciona rolagem suave ao clicar nos links de navegação
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelector(link.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
   window.addEventListener('scroll', function() {
     var nav = document.querySelector('nav');
     var headerHeight = document.querySelector('header').offsetHeight;
