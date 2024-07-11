@@ -25,6 +25,14 @@
       text-align: center;
     }
 
+    .story-image {
+    float: left;
+    margin: 0 20px 20px 0; /* Espaço ao redor da imagem */
+    max-width: 600px; /* Largura máxima da imagem */
+    height: 535px; /* Mantém a proporção da imagem */
+  }
+
+
     .logo {
       display: flex;
       justify-content: center;
@@ -196,18 +204,19 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: center;
+      margin: 20px;
     }
 
     .object img {
       max-width: 100px;
       height: auto;
-      margin-bottom: 10px;
+      margin-bottom: 0 0 auto;
     }
 
     .navigation-buttons {
       display: flex;
       justify-content: center;
-      margin-top: 10px;
+      margin-top: 0 0 auto;
     }
 
     .navigation-buttons button {
@@ -224,6 +233,45 @@
     .navigation-buttons button:hover {
       background-color: #5a0101;
     }
+
+    /* Estilos para o footer */
+    footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative; /* Garante que o footer tenha um contexto de empilhamento normal */
+    z-index: 1; /* Z-index do footer */
+}
+
+    .footer-container {
+      display: flex;
+      justify-content: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .footer-container img {
+      max-height: 30px; /* Altura máxima das imagens no footer */
+      width: auto; /* Largura ajustada automaticamente */
+      margin-bottom: 20px;
+      margin-right: 20px;
+    }
+
+    /* styles.css */
+
+.corner-image {
+    position: fixed;
+    bottom: 20px; /* Ajuste conforme necessário */
+    right: 20px; /* Ajuste conforme necessário */
+    max-width: 40px; /* Tamanho máximo da imagem */
+    width: auto;
+    height: auto;
+    z-index: 1000; /* Coloca a imagem sobre o footer */
+}
+
+
+
 
     @media screen and (max-width: 768px) {
       .top-members {
@@ -252,12 +300,13 @@
 <div class="container">
   <section id="historia">
     <h2>História do Jogo</h2>
+    <img src="ethan.png" alt="Imagem da História" class="story-image">
     <p>Um estudante universitário enfrenta diversos problemas psicológicos como depressão e esquizofrenia, perdido numa batalha solitária contra os monstros que assombram a sua mente. Para controlar esses problemas, ele procura um refúgio na medicação, mas quando esta deixa de funcionar ele vê-se preso numa confusão de alucinações.</p>
     <p>Criaturas sinistras como monstros e demónios começam a aparecer no seu caminho, transformando a sua realidade num novo mundo, onde ele se vê sozinho a ter de combater essas criaturas para sobreviver.</p>
     <p>Cada tentativa revela mais sobre os conflitos mentais do protagonista, onde ele se vê obrigado a confrontar as suas próprias fraquezas, encontrando uma maneira de as superar, enquanto luta para sobreviver.</p>
     
     <p>O objetivo do jogo passa por avançar por diversos conjuntos de salas, onde os monstros presentes em cada sala se diferenciam em poderes, quantidade e estrutura de ambiente, a depender do quanto o jogador avançou na atual run. Para avançar ao longo de cada sala é necessário derrotar todos os monstros presentes, sendo que a sala final se diferencia pelo monstro presente, neste caso o boss - o inimigo mais forte e chefe do andar. Para ser possível avançar para o nível seguinte é necessário derrotar o chefe final de cada sala.</p>
-    <p>Ao longo do jogo o jogador pode colecionar diversos itens que influenciam a vida do mesmo, bem como a agilidade e poder. Estes itens também estão disponíveis para compra na loja do jogo.
+    <p>Ao longo do jogo o jogador pode colecionar diversos itens que influenciam a vida do mesmo, bem como a agilidade e poder. Estes itens também estão disponíveis para compra na loja do jogo.</p>
     <p>De forma a derrotar os inimigos presentes no jogo, o jogador tem à sua disposição uma espada e uma varinha mágica.</p>
   </section>
 
@@ -265,24 +314,34 @@
     <h2>Objetos do Jogo</h2>
     <div class="objects-container">
       <div class="object">
-        <img src="item1.png" alt="Orbe de Regeneração">
+        <img src="orbe.png" alt="Orbe de Regeneração">
         <h3>Orbe de Regeneração</h3>
         <p>Restaura uma quantidade significativa de vida do jogador.</p>
       </div>
       <div class="object">
-        <img src="item2.png" alt="Amuleto de Força">
+        <img src="amuleto.png" alt="Amuleto de Força">
         <h3>Amuleto de Força</h3>
         <p>Confere mais poder de ataque ao jogador.</p>
       </div>
       <div class="object">
-        <img src="item3.png" alt="Escudo de Proteção">
+        <img src="escudo.png" alt="Escudo de Proteção">
         <h3>Escudo de Proteção</h3>
         <p>Reduz o dano recebido pelo jogador.</p>
       </div>
       <div class="object">
-        <img src="item4.png" alt="Relâmpago">
+        <img src="relampago.png" alt="Relâmpago">
         <h3>Relâmpago</h3>
         <p>Aumenta a velocidade de movimento do jogador.</p>
+      </div>
+      <div class="object">
+        <img src="varinha.png" alt="Relâmpago">
+        <h3>Varinha</h3>
+        <p>Utilizada para combater os inimigos.</p>
+      </div>
+      <div class="object">
+        <img src="espada.png" alt="Relâmpago">
+        <h3>Espada</h3>
+        <p>Utilizada para combater os inimigos.</p>
       </div>
     </div>
   </section>
@@ -297,7 +356,7 @@
   </section>
 
   <section id="jogo">
-    <h2>Jogue MOoD</h2>
+    <h2>Jogue More Oother Day</h2>
     <div class="video-container">
       <!-- Substitua a URL abaixo pela URL do seu jogo jogável em WebGL -->
       <iframe src="https://url-do-seu-jogo-em-webgl" width="800" height="600" frameborder="0"></iframe>
@@ -338,6 +397,18 @@
   </section>
 
 </div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+
+    <img src="estgv.png" alt="Imagem 1">
+    <img src="tdm.png" alt="Imagem 2">
+  </div>
+</footer>
+
+<img src="Nutcrack.png" alt="Imagem no Canto Inferior Direito" class="corner-image">
+
 
 <script>
   // Adiciona rolagem suave para toda navegação de scroll
