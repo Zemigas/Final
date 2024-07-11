@@ -7,17 +7,16 @@
 
   <style>
     body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('TexturaRoom9.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Mantém o background fixo */
-    scroll-behavior: smooth; /* Adiciona rolagem suave */
-}
-
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('TexturaRoom9.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* Mantém o background fixo */
+      scroll-behavior: smooth; /* Adiciona rolagem suave */
+    }
 
     header {
       background-color: #720303;
@@ -132,7 +131,12 @@
 
     h2 {
       font-size: 1.5em;
-      margin: 10px 0; /* Adiciona margem superior e inferior para os títulos das seções */
+      margin: 2px 0; /* Adiciona margem superior e inferior para os títulos das seções */
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    h4{
+      text-align: center;
     }
 
     p {
@@ -143,7 +147,6 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 25px; /* Espaçamento entre membros da equipe */
     }
 
     .team-member {
@@ -152,6 +155,7 @@
     }
 
     .team-member img {
+      margin-top: 30px;
       width: 180px; /* Ajuste o tamanho conforme necessário */
       height: 180px; /* Ajuste o tamanho conforme necessário */
       border-radius: 50%; /* Torna a imagem circular */
@@ -174,6 +178,53 @@
       justify-content: center;
     }
 
+    .objects-container {
+      display: flex;
+      overflow-x: auto; /* Permite rolagem horizontal */
+      gap: 20px; /* Espaçamento entre os objetos */
+      padding: 10px 0;
+      margin-bottom: 20px; /* Espaço inferior */
+      scroll-behavior: smooth; /* Rolagem suave */
+      -webkit-overflow-scrolling: touch; /* Adiciona rolagem suave em dispositivos iOS */
+    }
+
+    .object {
+      flex: 0 0 auto;
+      max-width: 300px;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .object img {
+      max-width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .navigation-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .navigation-buttons button {
+      background-color: #720303;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 5px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1.2em;
+    }
+
+    .navigation-buttons button:hover {
+      background-color: #5a0101;
+    }
+
     @media screen and (max-width: 768px) {
       .top-members {
         flex-wrap: wrap;
@@ -192,6 +243,7 @@
 
 <nav>
   <a href="#historia"><b>História</b></a>
+  <a href="#objetos"><b>Objetos</b></a> <!-- Movido para o segundo lugar -->
   <a href="#video"><b>Trailer</b></a>
   <a href="#jogo"><b>Jogar Agora</b></a>
   <a href="#equipa"><b>Equipa</b></a> <!-- Novo link de navegação -->
@@ -205,18 +257,39 @@
     <p>Cada tentativa revela mais sobre os conflitos mentais do protagonista, onde ele se vê obrigado a confrontar as suas próprias fraquezas, encontrando uma maneira de as superar, enquanto luta para sobreviver.</p>
     
     <p>O objetivo do jogo passa por avançar por diversos conjuntos de salas, onde os monstros presentes em cada sala se diferenciam em poderes, quantidade e estrutura de ambiente, a depender do quanto o jogador avançou na atual run. Para avançar ao longo de cada sala é necessário derrotar todos os monstros presentes, sendo que a sala final se diferencia pelo monstro presente, neste caso o boss - o inimigo mais forte e chefe do andar. Para ser possível avançar para o nível seguinte é necessário derrotar o chefe final de cada sala.</p>
+    <p>Ao longo do jogo o jogador pode colecionar diversos itens que influenciam a vida do mesmo, bem como a agilidade e poder. Estes itens também estão disponíveis para compra na loja do jogo.
+    <p>De forma a derrotar os inimigos presentes no jogo, o jogador tem à sua disposição uma espada e uma varinha mágica.</p>
+  </section>
 
-    <p>Ao longo do jogo o jogador pode colecionar diversos itens que influenciam a vida do mesmo, bem como a agilidade e poder. Estes itens também estão disponíveis para compra na loja do jogo, sendo eles:</p>
-    <p>- A Orbe de Regeneração, que restaura uma quantidade significativa de vida do jogador.</p>
-    <p>- O Amuleto de Força e o Escudo de Proteção, que conferem ao jogador mais poder de ataque, causando dano maior no inimigo.</p>
-    <p>- O Relâmpago, que confere mais velocidade de movimento do jogador.</p>
-
-    <p>De forma a derrotar os inimigos presentes no jogo, o jogador tem à sua disposição dois tipos diferentes de armas:</p>
-    <p>- A espada, que permite que o jogador ataque de uma distância curta.</p>
-    <p>- A varinha mágica, que permite que o jogador ataque de uma distância longa, lançando as mesmas.</p>
+  <section id="objetos">
+    <h2>Objetos do Jogo</h2>
+    <div class="objects-container">
+      <div class="object">
+        <img src="item1.png" alt="Orbe de Regeneração">
+        <h3>Orbe de Regeneração</h3>
+        <p>Restaura uma quantidade significativa de vida do jogador.</p>
+      </div>
+      <div class="object">
+        <img src="item2.png" alt="Amuleto de Força">
+        <h3>Amuleto de Força</h3>
+        <p>Confere mais poder de ataque ao jogador.</p>
+      </div>
+      <div class="object">
+        <img src="item3.png" alt="Escudo de Proteção">
+        <h3>Escudo de Proteção</h3>
+        <p>Reduz o dano recebido pelo jogador.</p>
+      </div>
+      <div class="object">
+        <img src="item4.png" alt="Relâmpago">
+        <h3>Relâmpago</h3>
+        <p>Aumenta a velocidade de movimento do jogador.</p>
+      </div>
+    </div>
   </section>
 
   <section id="video">
+    <h2>Trailer Oficial</h2>
+    <h4>More Oother Day</h4>
     <div class="video-container">
       <!-- Substitua a URL abaixo pela URL do seu vídeo no YouTube ou Vimeo -->
       <iframe width="560" height="315" src="VídeoFinal.mp4" type="video/mp4" frameborder="0" allowfullscreen></iframe>
@@ -224,6 +297,7 @@
   </section>
 
   <section id="jogo">
+    <h2>Jogue MOoD</h2>
     <div class="video-container">
       <!-- Substitua a URL abaixo pela URL do seu jogo jogável em WebGL -->
       <iframe src="https://url-do-seu-jogo-em-webgl" width="800" height="600" frameborder="0"></iframe>
@@ -234,6 +308,7 @@
   </section>
 
   <section id="equipa">
+    <h2>Equipa de Desenvolvimento</h2>
     <div class="team-container">
       <div class="top-members">
         <div class="team-member">
@@ -261,52 +336,75 @@
       </div>
     </div>
   </section>
+
 </div>
 
 <script>
-  // Adiciona a classe 'active' ao link de navegação correspondente à seção visível
-  const navLinks = document.querySelectorAll('nav a');
+  // Adiciona rolagem suave para toda navegação de scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
 
-  window.addEventListener('scroll', () => {
-    let current = '';
-
-    document.querySelectorAll('section').forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-
-      if (pageYOffset >= sectionTop - sectionHeight / 3) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href').includes(current)) {
-        link.classList.add('active');
-      }
+    const target = document.querySelector(this.getAttribute('href'));
+    target.scrollIntoView({
+      behavior: 'smooth'
     });
   });
+});
 
-  // Adiciona rolagem suave ao clicar nos links de navegação
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      document.querySelector(link.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  });
+// Adiciona a classe 'active' ao link de navegação correspondente à seção visível
+const navLinks = document.querySelectorAll('nav a');
 
-  window.addEventListener('scroll', function() {
-    var nav = document.querySelector('nav');
-    var headerHeight = document.querySelector('header').offsetHeight;
+window.addEventListener('scroll', () => {
+  let current = '';
 
-    if (window.pageYOffset > headerHeight) {
-      nav.classList.add('fixed');
-    } else {
-      nav.classList.remove('fixed');
+  document.querySelectorAll('section').forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+
+    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+      current = section.getAttribute('id');
     }
   });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href').includes(current)) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// Navegação lateral com setas para os objetos
+const objectsContainer = document.querySelector('.objects-container');
+const scrollStep = 300; // Quantidade de pixels a rolar a cada seta
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') {
+    objectsContainer.scrollBy({
+      left: -scrollStep,
+      behavior: 'smooth'
+    });
+  } else if (e.key === 'ArrowRight') {
+    objectsContainer.scrollBy({
+      left: scrollStep,
+      behavior: 'smooth'
+    });
+  }
+});
+
+// Adiciona classe 'fixed' ao menu de navegação quando necessário
+window.addEventListener('scroll', function() {
+  var nav = document.querySelector('nav');
+  var headerHeight = document.querySelector('header').offsetHeight;
+
+  if (window.pageYOffset > headerHeight) {
+    nav.classList.add('fixed');
+  } else {
+    nav.classList.remove('fixed');
+  }
+});
+
 </script>
 
 </body>
